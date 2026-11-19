@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STUDIO — Creative Digital Experience</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #f5f5f0;
+  --black: #171717;
+  --green: #c6f36b;
+  --gray: #777;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: var(--bg);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+
+header {
+  height: 85px;
+  padding: 0 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  font-size: 14px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #779b36;
+}
+
+.menu-btn {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 700px;
+  padding: 110px 7% 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-label {
+  display: inline-block;
+  background: var(--green);
+  padding: 9px 17px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 35px;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 10vw, 145px);
+  line-height: .92;
+  letter-spacing: -8px;
+  font-weight: 900;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 span {
+  color: #999;
+}
+
+.hero-bottom {
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.hero-bottom p {
+  max-width: 390px;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--black);
+  color: white;
+  padding: 18px 30px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.cta:hover {
+  background: #719b31;
+  transform: translateY(-4px);
+}
+
+/* DECORATION */
+
+.circle {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d9f9a2, #a4d64c);
+  right: 12%;
+  top: 27%;
+  filter: blur(1px);
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-25px) rotate(10deg); }
+}
+
+/* SECTION */
+
+.section {
+  padding: 110px 7%;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.section-title h2 {
+  font-size: clamp(38px, 5vw, 65px);
+  letter-spacing: -3px;
+}
+
+.section-title p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px #00000012;
+}
+
+.card-image {
+  height: 280px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .7s;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+.card-content {
+  padding: 28px;
+}
+
+.card-content small {
+  color: #8a9e63;
+  font-weight: 700;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  margin: 13px 0;
+}
+
+.card-content p {
+  color: var(--gray);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* BANNER */
+
+.banner {
+  margin: 40px 7% 110px;
+  background: var(--green);
+  border-radius: 25px;
+  padding: 85px 8%;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: clamp(35px, 6vw, 75px);
+  letter-spacing: -4px;
+  line-height: 1.1;
+}
+
+.banner p {
+  margin: 25px 0 35px;
+  color: #46552e;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 45px 7%;
+  background: #171717;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: #999;
+  font-size: 13px;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+  header {
+    height: 70px;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    padding: 25px 7%;
+    flex-direction: column;
+    z-index: 10;
+    border-bottom: 1px solid #ddd;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero {
+    min-height: 650px;
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    letter-spacing: -4px;
+  }
+
+  .circle {
+    width: 170px;
+    height: 170px;
+    top: 42%;
+    right: 5%;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .banner {
+    padding: 65px 6%;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#" class="logo">STUDIO.</a>
+
+  <nav id="nav">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#works">WORKS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <button class="menu-btn" id="menuBtn">☰</button>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="circle"></div>
+
+  <div class="hero-label">CREATIVE DIGITAL STUDIO</div>
+
+  <h1>
+    DESIGN<br>
+    <span>YOUR</span><br>
+    FUTURE.
+  </h1>
+
+  <div class="hero-bottom">
+    <p>
+      새로운 아이디어와 창의적인 디자인으로
+      디지털 세상에 특별한 경험을 만듭니다.
+      당신의 이야기를 시작해 보세요.
+    </p>
+
+    <a href="#works" class="cta">EXPLORE MORE ↗</a>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-title reveal">
+    <h2>Our Philosophy.</h2>
+    <p>Simple ideas. Powerful experiences.</p>
+  </div>
+
+  <p class="reveal" style="max-width:700px; line-height:2; color:#666; font-size:18px;">
+    우리는 복잡함보다 본질을 생각합니다.
+    좋은 디자인은 단순히 아름다운 것이 아니라
+    사람과 사람을 연결하고 새로운 가치를 만드는 것입니다.
+  </p>
+</section>
+
+<section class="section" id="works">
+  <div class="section-title reveal">
+    <h2>Selected Works.</h2>
+    <p>2026 — Creative Collection</p>
+  </div>
+
+  <div class="cards">
+
+    <article class="card reveal">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900"
+             alt="Modern office">
+      </div>
+      <div class="card-content">
+        <small>01 / BRANDING</small>
+        <h3>Creative Space</h3>
+        <p>공간과 브랜드의 새로운 가능성을 발견합니다.</p>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900"
+             alt="Digital workspace">
+      </div>
+      <div class="card-content">
+        <small>02 / DIGITAL</small>
+        <h3>Digital Life</h3>
+        <p>기술과 디자인이 만나는 새로운 디지털 경험.</p>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=900"
+             alt="Minimal interior">
+      </div>
+      <div class="card-content">
+        <small>03 / ART DIRECTION</small>
+        <h3>New Perspective</h3>
+        <p>일상의 평범함을 특별한 시선으로 바라봅니다.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="banner reveal" id="contact">
+  <h2>Let's Make<br>Something Great.</h2>
+  <p>새로운 프로젝트를 함께 시작해 보세요.</p>
+  <a href="mailto:hello@example.com" class="cta">GET IN TOUCH ↗</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="logo">STUDIO.</div>
+  <p>© 2026 STUDIO. All Rights Reserved.</p>
+</footer>
+
+<script>
+// 모바일 메뉴
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  menuBtn.textContent =
+    nav.classList.contains('open') ? '✕' : '☰';
+});
+
+// 메뉴 클릭 시 닫기
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuBtn.textContent = '☰';
+  });
+});
+
+// 스크롤 애니메이션
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
